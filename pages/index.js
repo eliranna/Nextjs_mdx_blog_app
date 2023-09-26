@@ -1,32 +1,55 @@
+'use client'
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Postcard from '../components/PostCard';
+import Navbar from '../components/Navbar'
+import Main from '../components/Main';
+import { spacing } from '../style';
 
 export default function Home(props) {
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [style, _] = useState(null);
+
+  const darkMode = {
+    backgroundColor: "black",
+    color: "white"
+  }
+  
+  const lightMode = {
+    backgroundColor: "white",
+    color: "black"
+  }
+
+  const main = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    gap: spacing.spacing8,
+  }
+
+  const navbar = {
+    width: "100%",
+    padding: `${spacing.spacing16} 0px`
+  }
+
   return (
-    <div className='container w-[80%] mx-auto mt-10'>
+    <div style={isDarkMode ? darkMode : lightMode}>
       <Head>
         <title>Cooking Blog</title>
       </Head>
-      <h1 className="text-green-700 text-3xl font-bold my-12">Cooking Blog2</h1>
-      {
-        props.posts.length > 0 ? (
-          <div className='md:grid md:grid-cols-3 gap-8'>
-            {
-              props.posts.map((post,index) => (
-                <Link href={`/posts/${post.slug}`} key={index}>
-                    <Postcard post={post} />
-                </Link>
-              ))
-            }
+      <div style={main}>
+          <div style={navbar}>
+            <Navbar onDarkModeToggle={isDarkMode => setIsDarkMode(isDarkMode)}/>
           </div>
-        ) : (
-          <h2 className='font-sans text-3xl'>No posts yet</h2>
-        )
-      }
+        <div>
+          <Main posts={props.posts}/>
+        </div>
+      </div>
     </div>
   )
 }
