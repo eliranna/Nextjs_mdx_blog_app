@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { fontSize, spacing } from '../style';
 import DarkModeToggle from './DarkModeToggle'
 
-export default function Navbar({onDarkModeToggle}) {
+export default function Navbar({isDarkMode, onDarkModeToggle}) {
 
     const wrapper = {
         display: "flex",
@@ -39,7 +39,7 @@ export default function Navbar({onDarkModeToggle}) {
                     </Link>                
                 </div>            
                 <div>
-                    <DarkModeToggle onChange={onDarkModeToggle}/>
+                    <DarkModeToggle isDarkMode={isDarkMode} onChange={onDarkModeToggle}/>
                 </div>
             </div>
         </div>

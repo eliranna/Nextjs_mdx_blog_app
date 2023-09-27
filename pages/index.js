@@ -12,14 +12,25 @@ import { spacing } from '../style';
 
 export default function Home(props) {
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(null);
 
   useEffect(() => {
+    const initialDarkModeValue = JSON.parse(localStorage.getItem("darkMode"))
+    setIsDarkMode(initialDarkModeValue)
+    setBodyColor(initialDarkModeValue)
+  }, [])
+
+  const setBodyColor = (isDarkMode) => {
     document.body.style.backgroundColor = isDarkMode ? '#111111' : 'white';
-  }, [isDarkMode])
+  }
 
   const wrapper = {
       minHeight: "100vh"
+  }
+
+  const handleDarkModeToggle = () => {
+    setIsDarkMode(!isDarkMode)
+    localStorage.setItem("darkMode", !isDarkMode)
   }
 
   const darkMode = {
@@ -54,16 +65,14 @@ export default function Home(props) {
     padding: `${spacing.spacing16} 0px`,
   }
 
-  const wrapperStyle = isDarkMode ? {...wrapper, ...darkMode} : {...wrapper, ...lightMode}
-
   return (
-    <div style={wrapperStyle}>
+    <div style={isDarkMode ? {...wrapper, ...darkMode} : {...wrapper, ...lightMode}}>
       <Head>
         <title>Cooking Blog</title>
       </Head>
       <div style={main}>
           <div style={navbar}>
-            <Navbar onDarkModeToggle={isDarkMode => setIsDarkMode(isDarkMode)}/>
+            <Navbar isDarkMode={isDarkMode} onDarkModeToggle={handleDarkModeToggle}/>
           </div>
         <div>
           <Main posts={props.posts}/>
