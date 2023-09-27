@@ -15,7 +15,8 @@ export default function Navbar({onDarkModeToggle}) {
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
-        fontSize: fontSize.fontSize2      
+        fontSize: fontSize.fontSize2,
+            
     }
 
     const left = {
@@ -30,9 +31,7 @@ export default function Navbar({onDarkModeToggle}) {
 
     return (
         <div style={wrapper}>
-            <div style={right}>
-
-            </div>
+            <div style={right}/>
             <div style={left}>
                 <div style={navlink}>
                     <Link href={`/about`}>

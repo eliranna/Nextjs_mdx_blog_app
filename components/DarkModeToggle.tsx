@@ -33,7 +33,9 @@ export default function DarkModeToggle({onChange}) {
 
     const darkModeIcon = {
         width: "25px",
-        cursor: "pointer"
+        cursor: "pointer",
+        filter: isDarkMode ? "invert(1)" : null,
+        transition: "all 0.5s"
     }
 
     return (

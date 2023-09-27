@@ -13,32 +13,51 @@ import { spacing } from '../style';
 export default function Home(props) {
 
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [style, _] = useState(null);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = isDarkMode ? '#111111' : 'white';
+  }, [isDarkMode])
+
+  const wrapper = {
+      minHeight: "100vh"
+  }
 
   const darkMode = {
-    backgroundColor: "black",
-    color: "white"
+    backgroundColor: "#111111",
+    color: "white",
+    transition: "all 0.5s"
   }
   
   const lightMode = {
     backgroundColor: "white",
-    color: "black"
+    color: "#111111",
+    transition: "all 0.5s"
   }
 
   const main = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    gap: spacing.spacing8,
+    gap: spacing.spacing4,
   }
 
   const navbar = {
     width: "100%",
-    padding: `${spacing.spacing16} 0px`
+    padding: `${spacing.spacing8} 0px`,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
   }
 
+  const footer = {
+    width: "100%",
+    padding: `${spacing.spacing16} 0px`,
+  }
+
+  const wrapperStyle = isDarkMode ? {...wrapper, ...darkMode} : {...wrapper, ...lightMode}
+
   return (
-    <div style={isDarkMode ? darkMode : lightMode}>
+    <div style={wrapperStyle}>
       <Head>
         <title>Cooking Blog</title>
       </Head>
@@ -49,6 +68,9 @@ export default function Home(props) {
         <div>
           <Main posts={props.posts}/>
         </div>
+      </div>
+      <div style={footer}>
+
       </div>
     </div>
   )
