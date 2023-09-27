@@ -36,7 +36,7 @@ export default function Host() {
     const descCaption = {
         maxWidth: "250px"   
     }
- 
+
     return (
         <div style={wrapper}>
             <div style={avatar}>
@@ -47,7 +47,7 @@ export default function Host() {
                     Eliran Natan
                 </div>
                 <div style={desc}>
-                    <div style={descCaption}>Writes about Generative AI Adoption for Enterprises</div>
+                    <div style={descCaption}>Writes about <span>Generative AI</span> Adoption for Enterprises</div>
                 </div>
             </div>
         </div>
