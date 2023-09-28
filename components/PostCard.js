@@ -8,12 +8,12 @@ export default function PostCard({post}) {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    gap: spacing.spacing4
   }
 
   const title = {
     fontSize: fontSize.fontSize4,
-    fontWeight: "300"
+    fontWeight: "300",
+    marginBottom: "0px"
   }
   const description = {
     fontSize: fontSize.fontSize3,

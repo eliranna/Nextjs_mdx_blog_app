@@ -12,7 +12,7 @@ export default function PostsList({posts}) {
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
-        gap: spacing.spacing16
+        gap: spacing.spacing4
     }
 
     const filtersPane = {
