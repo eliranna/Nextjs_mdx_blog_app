@@ -62,7 +62,7 @@ export default function Layout({children}) {
   return (
     <div style={isDarkMode ? {...wrapper, ...darkMode} : {...wrapper, ...lightMode}}>
       <Head>
-        <title>Cooking Blog</title>
+        <title>Generative AI Adoption for Enterprises</title>
       </Head>
       <div style={main}>
           <div style={navbar}>
