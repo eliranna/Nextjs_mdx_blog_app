@@ -14,6 +14,9 @@ import Layout from '../components/Layout';
 export default function Home(props) {
   return (
     <Layout>
+        <Head>
+        <title>Generative AI Adoption for Enterprises</title>
+      </Head>
       <Main posts={props.posts}/>
     </Layout>
   )
