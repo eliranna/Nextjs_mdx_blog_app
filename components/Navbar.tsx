@@ -1,8 +1,17 @@
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { fontSize, spacing } from '../style';
 import DarkModeToggle from './DarkModeToggle'
 
 export default function Navbar({isDarkMode, onDarkModeToggle}) {
+
+    const [inBase, setInBase] = useState(false)
+    
+    useEffect(() => {
+        if (window.location.pathname === '/') {
+            setInBase(true)
+        }
+    })
 
     const wrapper = {
         display: "flex",
@@ -31,13 +40,21 @@ export default function Navbar({isDarkMode, onDarkModeToggle}) {
 
     return (
         <div style={wrapper}>
-            <div style={right}/>
+            <div style={right}>
+                {!inBase && (
+                    <div style={navlink}>
+                        <Link href={`/`}>
+                            Eliran Natan
+                        </Link>                
+                    </div>
+                )}                 
+            </div>
             <div style={left}>
-                <div style={navlink}>
+                {/*<div style={navlink}>
                     <Link href={`/about`}>
                         About
                     </Link>                
-                </div>            
+                </div>*/}            
                 <div>
                     <DarkModeToggle isDarkMode={isDarkMode} onChange={onDarkModeToggle}/>
                 </div>
