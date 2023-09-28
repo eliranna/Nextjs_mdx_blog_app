@@ -11,9 +11,9 @@ export default function DarkModeToggle({isDarkMode, onChange}) {
     }
 
     return (
-        <button onClick={onChange}>
-            <img style={darkModeIcon} src="./assets/sun.svg"/>
-        </button>
+        <div onClick={onChange}>
+            <img style={darkModeIcon} src="/assets/sun.svg"/>
+        </div>
     )
 }
 

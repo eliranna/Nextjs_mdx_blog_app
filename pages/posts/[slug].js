@@ -4,27 +4,53 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import Layout from '../../components/Layout';
+import { fontSize, spacing } from '../../style';
 
 export default function Post(props) {
-  return (
-    <div className='container w-[80%] mx-auto mt-10'>
-        {
-            props.frontMatter && props.mdxSource && (
-                <div>
-                    <Head>
-                        <title>{props.frontMatter.title}</title>
-                    </Head>
-                <h1 className='font-semibold my-8 text-xl text-green-700'>{props.frontMatter.title}</h1>
-                
-                <MDXRemote {...props.mdxSource} />
-                </div>
 
-                
-            )
-        }
-        
-    </div>
-  )
+    const wrapper = {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+    }
+
+    const title = {
+        textAlign: "left"
+    }
+
+    const article = {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        maxWidth: "650px",
+        gap: spacing.spacing8
+    }
+
+    return (
+        <Layout>
+            {
+                props.frontMatter && props.mdxSource && (
+                    <div style={wrapper}>
+                        <Head>
+                            <title>{props.frontMatter.title}</title>
+                        </Head>
+                        <div style={article}>
+                            <div>
+                                <h1 style={title}>{props.frontMatter.title}</h1>
+                            </div>
+                            <div>
+                                <MDXRemote {...props.mdxSource} />
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                )
+            }
+            
+        </Layout>
+    )
 }
 
 

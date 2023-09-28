@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function PostsList({posts}) {
 
-    const [selectedFilter, setSelectedFilter] = useState('ALL')
+    const [selectedFilter, setSelectedFilter] = useState('BASICS')
 
     const wrapper = {
         display: "flex",
@@ -22,11 +22,7 @@ export default function PostsList({posts}) {
         gap: spacing.spacing16
     }
 
-    const filters = [
-        {
-            id: 'ALL',
-            caption: 'All'
-        }, 
+    const filters = [ 
         {
             id: 'BASICS',
             caption: 'The Basics'
@@ -39,6 +35,10 @@ export default function PostsList({posts}) {
             id: 'ADVANCED',
             caption: 'In Depth'
         }, 
+        {
+            id: 'ALL',
+            caption: 'All'
+        },
     ]
 
     return (
