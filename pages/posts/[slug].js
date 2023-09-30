@@ -17,13 +17,14 @@ export default function Post(props) {
 
     const title = {
         textAlign: "left",
-        fontWeight: 600
+        fontWeight: 300,
+        margin: "0px"
     }
 
     const description = {
         textAlign: "left",
-        fontWeight: 300,
-        margin: "0px"
+        fontWeight: 200,
+        margin: "0px",
     }
 
     const article = {
@@ -31,7 +32,7 @@ export default function Post(props) {
         flexDirection: "column",
         justifyContent: "center",
         maxWidth: "650px",
-        gap: spacing.spacing8
+        gap: spacing.spacing3
     }
 
     return (
@@ -44,10 +45,10 @@ export default function Post(props) {
                         </Head>
                         <div style={article}>
                             <div>
-                                <h2 style={title}>{props.frontMatter.title}</h2>
+                                <h4 style={title}>{props.frontMatter.title}</h4>
                             </div>
                             <div>
-                                <h5 style={description}>{props.frontMatter.description}</h5>
+                                <p style={description}>{props.frontMatter.description}</p>
                             </div>
                             <div>
                                 <MDXRemote {...props.mdxSource} />
