@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { fontSize, spacing } from '../style';
-import DarkModeToggle from './DarkModeToggle'
+import React from 'react';
 
 export default function Navbar({isDarkMode, onDarkModeToggle}) {
 
@@ -13,51 +12,28 @@ export default function Navbar({isDarkMode, onDarkModeToggle}) {
         }
     })
 
-    const wrapper = {
-        display: "flex",
-        justifyContent: "space-between",
-        maxWidth: "800px",
-        width: "100%"
-    }
-
-    const navlink = {
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        fontSize: fontSize.fontSize2,
-            
-    }
-
-    const left = {
-        display: "flex",
-        flexDirection: "row", 
-        gap: spacing.spacing12       
-    }
-
-    const right = {
-    
-    }
-
     return (
-        <div style={wrapper}>
-            <div style={right}>
+        <div className='flex justify-between'>
+            <div>
                 {!inBase && (
-                    <div style={navlink}>
+                    <div className='text-md italic'>
                         <Link href={`/`}>
-                            Eliran Natan
+                            Philosophy Notes
                         </Link>                
                     </div>
                 )}                 
             </div>
-            <div style={left}>
+            <div className='flex'>
                 {/*<div style={navlink}>
                     <Link href={`/about`}>
                         About
                     </Link>                
-                </div>*/}            
+                </div>*/}
+                {/*       
                 <div>
                     <DarkModeToggle isDarkMode={isDarkMode} onChange={onDarkModeToggle}/>
                 </div>
+                */}
             </div>
         </div>
     )

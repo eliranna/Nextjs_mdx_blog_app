@@ -3,22 +3,42 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Navbar from '../components/Navbar'
-import Main from '../components/Main';
-import { spacing } from '../style';
-import Layout from '../components/Layout';
 
 export default function Home(props) {
   return (
-    <Layout>
-        <Head>
-        <title>Generative AI Adoption for Enterprises</title>
+    <div>
+      <Head>
+          <title>Eliran Natan's Philosophy Notes</title>
       </Head>
-      <Main posts={props.posts}/>
-    </Layout>
+      <div className='flex flex-col justify-center gap-16 mt-36'>
+          <div className='text-center italic text-3xl'>
+              <span>Philosophy Notes</span>
+          </div>
+          <div className='flex justify-center'>
+              <div className='flex justify-center flex-col gap-32'>
+                  <div className='flex flex-col justify-center max-w-sm gap-2'>
+                      <div className='text-center small-caps tracking-widest'>
+                          <span>Eliran Natan</span>
+                      </div>
+                      <div className='text-center italic'>
+                          <span> 
+                              Teaching Philosophy & Computer Science. Graduate Student in Philosophy at Tel Aviv University.
+                          </span>
+                      </div>
+                  </div>
+                  <div className='flex flex-col justify-center max-w-sm gap-2'>
+                      <div className='text-center uppercase tracking-widest text-xs'>
+                          <span>Courses</span>
+                      </div>
+                      <div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
   )
 }
 
