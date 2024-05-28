@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import React from 'react';
 
-export default function Navbar({isDarkMode, onDarkModeToggle}) {
+export default function Navbar() {
 
     const [inBase, setInBase] = useState(false)
     
@@ -16,9 +16,9 @@ export default function Navbar({isDarkMode, onDarkModeToggle}) {
         <div className='flex justify-between'>
             <div>
                 {!inBase && (
-                    <div className='text-md italic'>
+                    <div className='text-md small-caps tracking-widest'>
                         <Link href={`/`}>
-                            Philosophy Notes
+                            Eliran Natan
                         </Link>                
                     </div>
                 )}                 
