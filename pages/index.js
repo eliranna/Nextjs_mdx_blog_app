@@ -68,7 +68,7 @@ export default function Home(props) {
                       </div>
                       <div className='flex flex-col gap-2 cursor-pointer'>
                         {courses.map(course => (
-                            <Link className='text-center text-lg italic font-semibold' href={course.link}>
+                            <Link className='text-center text-md italic font-semibold' href={course.link}>
                               {course.title}
                             </Link>
                         ))}

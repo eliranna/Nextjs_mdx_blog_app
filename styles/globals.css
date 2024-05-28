@@ -11,10 +11,24 @@ body {
   font-family: 'CMU Serif', sans-serif;
 }
 
+h2 {
+	font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 600;
+  margin-top: 2.25rem; /* 36px */
+  margin-bottom: 1rem; /* 16px */
+}
+
 p {
   font-size: 1.125rem; /* 18px */
   line-height: 1.75rem; /* 28px */
-  margin-bottom: 32px;
+  margin-bottom: 2rem; /* 32px */
+}
+
+blockquote {
+  margin-left: 2.25rem; /* 36px */
+  margin-right: 2.25rem; /* 36px */
+  font-style: italic;
 }
 
 .small-caps {
