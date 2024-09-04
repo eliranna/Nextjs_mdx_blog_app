@@ -5,7 +5,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Head from 'next/head';
 import Link from 'next/link';
-import {useState} from 'React'
+import {useState} from 'react'
 
 const posts = [
   {
