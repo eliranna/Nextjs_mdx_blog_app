@@ -17,7 +17,7 @@ export default function Navbar() {
             <div>
                 {!inBase && (
                     <div className='text-md small-caps tracking-widest'>
-                        <Link href={`/`}>
+                        <Link href={`/`} style={{textDecoration: 'none!important'}}>
                             Eliran Natan
                         </Link>                
                     </div>

@@ -17,10 +17,11 @@ export default function Post(props) {
                             <title>{props.frontMatter.title}</title>
                         </Head>
                         <div className='flex flex-col gap-20 max-w-2xl mt-10'>
-                            <div>
-                                <div className='text-4xl italic text-center'>{props.frontMatter.title}</div>
+                            <div className='flex flex-col gap-12'>
+                                <div className='text-3xl text-center leading-relaxed'>{props.frontMatter.title}</div>
+                                <div className='text-lg italic text-center'>{props.frontMatter.description}</div>
                             </div>
-                            <div>
+                            <div className='text-justify'>
                                 <MDXRemote {...props.mdxSource} />
                             </div>
                         </div>
