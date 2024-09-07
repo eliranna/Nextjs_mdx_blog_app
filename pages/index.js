@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-          <title>Eliran Natan's Philosophy Notes</title>
+          <title>Eliran Natan</title>
       </Head>
       <div className='flex flex-col justify-center gap-12 my-28'>
           <div className='flex justify-center'>
