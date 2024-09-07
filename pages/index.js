@@ -14,7 +14,7 @@ const posts = [
     </span>,
     type: 'post',
     desc: <span>
-      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course will be included in the mandatory curriculum for the bachelor's degree in the integrated track for Sustainability and Government. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
+      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
     </span>,
     date: 'Sep 01, 2024'
   },
