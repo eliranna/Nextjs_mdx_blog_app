@@ -10,19 +10,21 @@ import {useState} from 'react'
 const posts = [
   {
     title: <span>
-      01.09.24: Founding an academic course for Reichman University: Artificial Intelligence in the Socio-Ecological Sphere (5318)
+      Founding an academic course for Reichman University: Artificial Intelligence in the Socio-Ecological Sphere (5318)
     </span>,
     type: 'post',
     desc: <span>
       This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course will be included in the mandatory curriculum for the bachelor's degree in the integrated track for Sustainability and Government. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
     </span>,
+    date: 'Sep 01, 2024'
   },
   {
     title: 'Lacture: Life as a contradiction',
     type: 'post',
     desc: <span>
       Substance dualism is a pivotal concept in the realm of metaphysics, asserting the existence of two distinct types of substances: minds (mental substances) and bodies (material substances). According to this thesis, human beings are composite entities, each consisting of a mind and a body, both of which are independent entities in their own right. This view stands in stark opposition to monistic theories, which argue that all things are composed of a single type of substance. <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
-    </span>
+    </span>,
+    date: 'Jul 31, 2024'
   }
 ]
 
@@ -72,7 +74,7 @@ export default function Home() {
                         {posts.filter(post => state === 'Blog' ? post.type === 'post' : post.type === 'article').map(post => (
                           <div className='flex flex-col gap-10'>
                             <div className='flex flex-col gap-6'>
-                            <div className='text-center text-xs'>
+                              <div className='text-center text-xs tracking-widest opacity-60'>
                                 {post.date}
                               </div>
                               <div className='text-center text-md font-semibold'>
