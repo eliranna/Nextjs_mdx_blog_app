@@ -7,7 +7,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import {useState} from 'react'
 
-const withCoverImage = true;
+const withCoverImage = false;
 
 const posts = [
   {
@@ -17,12 +17,23 @@ const posts = [
       Substance dualism is a pivotal concept in the realm of metaphysics, asserting the existence of two distinct types of substances: minds (mental substances) and bodies (material substances). According to this thesis, human beings are composite entities, each consisting of a mind and a body, both of which are independent entities in their own right. This view stands in stark opposition to monistic theories, which argue that all things are composed of a single type of substance.
     </span>,
     date: 'Jul 31, 2024',
+    image: "https://res.cloudinary.com/dfdk4g2pj/image/upload/v1725459446/sara_28738_close_up_of_white_detailed_statue_of_upper_body_of_a_2e9de4bf-8be2-4053-9de1-4f9f6e1b0a87_1_nwjdg0.png"
   },
   {
     title: <span>
       Note: Why am I founding a new academic course on AI & Society?
     </span>,
     type: 'post',
+    desc: <span>
+      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
+    </span>,
+    date: 'Sep 01, 2024'
+  },
+  {
+    title: <span>
+      Kierkegaard and Faith
+    </span>,
+    type: 'article',
     desc: <span>
       This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
     </span>,
@@ -48,12 +59,12 @@ export default function Home() {
       <div className='flex flex-col justify-center gap-12 my-28'>
           <div className='flex justify-center'>
               <div className='flex justify-center flex-col gap-16'>
-                  <div className='flex flex-row justify-between'>
-                      <div className='small-caps tracking-widest text-xl'>
+                  <div className='flex flex-col justify-between gap-2'>
+                      <div className='small-caps tracking-widest text-xl text-center'>
                           <span>Eliran Natan</span>
                       </div>
-                      <div className='text-right italic flex'>
-                          <span className='max-w-sm'> 
+                      <div className='text-right italic flex justify-center'>
+                          <span className='max-w-sm text-center'> 
                             Philosophy Research Student and Lecturer at Tel Aviv University and Reichman University.
                           </span>
                       </div>
@@ -83,8 +94,8 @@ export default function Home() {
                         {posts.filter(post => state === 'Blog' ? post.type === 'post' : post.type === 'article').map(post => (
                           <div className='flex flex-col gap-10'>
 
-                            <div className='flex flex-col gap-6'>
-                              <div className='flex flex-col gap-6'>
+                            <div className='flex flex-col gap-4'>
+                              <div className='flex flex-col gap-2'>
                                 <div className='text-center text-xs tracking-widest opacity-60'>
                                   {post.date}
                                 </div>
