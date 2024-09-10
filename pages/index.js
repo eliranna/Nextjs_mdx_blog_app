@@ -90,11 +90,11 @@ export default function Home() {
                   </div>
                   <div className='flex flex-col'>
                     <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
-                      <div className='flex flex-col max-w-lg justify-center items-center gap-20'>
+                      <div className='flex flex-col justify-center items-center gap-20'>
                         {posts.filter(post => state === 'Blog' ? post.type === 'post' : post.type === 'article').map(post => (
-                          <div className='flex flex-col gap-10'>
+                          <div className='flex flex-col gap-10 justify-center items-center'>
 
-                            <div className='flex flex-col gap-4'>
+                            <div className='flex flex-col gap-4 max-w-lg '>
                               <div className='flex flex-col gap-2'>
                                 <div className='text-center text-xs tracking-widest opacity-60'>
                                   {post.date}
@@ -108,7 +108,7 @@ export default function Home() {
                               </div>
                             </div>
                             {post.image && (
-                              <div>
+                              <div className='max-w-xl'>
                                 <img src={post.image}/>
                               </div>
                             )}
