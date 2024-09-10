@@ -46,14 +46,6 @@ export default function Layout({children}) {
     gap: spacing.spacing4,
   }
 
-  const navbar = {
-    width: "100%",
-    padding: `${spacing.spacing8} 0px`,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-  }
-
   const footer = {
     width: "100%",
     padding: `${spacing.spacing16} 0px`,
@@ -62,7 +54,7 @@ export default function Layout({children}) {
   return (
     <div style={isDarkMode ? {...wrapper, ...darkMode} : {...wrapper, ...lightMode}}>
       <div style={main}>
-          <div style={navbar}>
+          <div className='w-full flex justify-center pt-12'>
             <Navbar isDarkMode={isDarkMode} onDarkModeToggle={handleDarkModeToggle}/>
           </div>
         <div>

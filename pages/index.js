@@ -7,10 +7,20 @@ import Head from 'next/head';
 import Link from 'next/link';
 import {useState} from 'react'
 
+const withCoverImage = true;
+
 const posts = [
   {
+    title: 'Lacture: Life as a contradiction',
+    type: 'post',
+    desc: <span>
+      Substance dualism is a pivotal concept in the realm of metaphysics, asserting the existence of two distinct types of substances: minds (mental substances) and bodies (material substances). According to this thesis, human beings are composite entities, each consisting of a mind and a body, both of which are independent entities in their own right. This view stands in stark opposition to monistic theories, which argue that all things are composed of a single type of substance.
+    </span>,
+    date: 'Jul 31, 2024',
+  },
+  {
     title: <span>
-      Founding an academic course for Reichman University: Artificial Intelligence in the Socio-Ecological Sphere (5318)
+      Note: Why am I founding a new academic course on AI & Society?
     </span>,
     type: 'post',
     desc: <span>
@@ -18,14 +28,6 @@ const posts = [
     </span>,
     date: 'Sep 01, 2024'
   },
-  {
-    title: 'Lacture: Life as a contradiction',
-    type: 'post',
-    desc: <span>
-      Substance dualism is a pivotal concept in the realm of metaphysics, asserting the existence of two distinct types of substances: minds (mental substances) and bodies (material substances). According to this thesis, human beings are composite entities, each consisting of a mind and a body, both of which are independent entities in their own right. This view stands in stark opposition to monistic theories, which argue that all things are composed of a single type of substance. <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
-    </span>,
-    date: 'Jul 31, 2024'
-  }
 ]
 
 export default function Home() {
@@ -37,8 +39,6 @@ export default function Home() {
       borderBottom: (state === section) && '1px solid black' 
     }}>{section}</div>
   )
-
-  console.log(posts)
 
   return (
     <div>
@@ -58,10 +58,19 @@ export default function Home() {
                           </span>
                       </div>
                   </div>
-                  <div className='max-w-2xl'>
-                    <img src="https://res.cloudinary.com/dfdk4g2pj/image/upload/v1725459446/sara_28738_close_up_of_white_detailed_statue_of_upper_body_of_a_2e9de4bf-8be2-4053-9de1-4f9f6e1b0a87_1_nwjdg0.png"/>
-                  </div>
-                  <div className='flex flex-col justify-center gap-16'>
+                  {withCoverImage && (
+                    <div className='max-w-2xl flex flex-col space-y-2'>
+                      <div>
+                        <img src="https://res.cloudinary.com/dfdk4g2pj/image/upload/v1725459446/sara_28738_close_up_of_white_detailed_statue_of_upper_body_of_a_2e9de4bf-8be2-4053-9de1-4f9f6e1b0a87_1_nwjdg0.png"/>
+                      </div>
+                      <div className='flex justify-center'>
+                        <div className='flex justify-center text-sm italic text-center max-w-xl'>
+                        Dionysus, the Greek god of wine, ecstasy, and chaos, represents Nietzsche's ideal of embracing the ecstatic aspects of existence.
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  <div className='flex flex-col mt-8'>
                       <div className='text-center small-caps tracking-widest text-md flex justify-center gap-12'>
                           <SectionLink section="Blog"/>
                           <div className='text-xs flex flex-col justify-center'>&#9702;</div>
@@ -70,15 +79,18 @@ export default function Home() {
                   </div>
                   <div className='flex flex-col'>
                     <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
-                      <div className='flex flex-col max-w-lg justify-center items-center gap-16'>
+                      <div className='flex flex-col max-w-lg justify-center items-center gap-20'>
                         {posts.filter(post => state === 'Blog' ? post.type === 'post' : post.type === 'article').map(post => (
                           <div className='flex flex-col gap-10'>
+
                             <div className='flex flex-col gap-6'>
-                              <div className='text-center text-xs tracking-widest opacity-60'>
-                                {post.date}
-                              </div>
-                              <div className='text-center text-md font-semibold'>
-                                {post.title}
+                              <div className='flex flex-col gap-6'>
+                                <div className='text-center text-xs tracking-widest opacity-60'>
+                                  {post.date}
+                                </div>
+                                <div className='text-center text-md font-semibold'>
+                                  {post.title}
+                                </div>
                               </div>
                               <div className='text-center text-md'>
                                 {post.desc}
