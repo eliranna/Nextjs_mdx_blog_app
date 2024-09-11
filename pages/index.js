@@ -11,23 +11,23 @@ const withCoverImage = false;
 
 const posts = [
   {
-    title: 'Lacture: Life as a contradiction',
+    title: <span>
+      AI & Society: Founding a New Academic Course at Reichman University
+    </span>,
     type: 'post',
     desc: <span>
-      Substance dualism is a pivotal concept in the realm of metaphysics, asserting the existence of two distinct types of substances: minds (mental substances) and bodies (material substances). According to this thesis, human beings are composite entities, each consisting of a mind and a body, both of which are independent entities in their own right. This view stands in stark opposition to monistic theories, which argue that all things are composed of a single type of substance.
+      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai_and_society_course">My Message to Students</a>.
+    </span>,
+    date: 'Sep 01, 2024',
+  },
+  {
+    title: 'Life as Contradiction: My Upcoming Lecture at TAU',
+    type: 'post',
+    desc: <span>
+      On August 7th, I will speak at the annual conference for research students in the Philosophy Department at Tel Aviv University. My lecture will address the Hegelian account of organicism and explore how contemporary approaches in neuroscience can be interpreted as instantiations of dialectical principles. <a href="posts/life_as_contradiction">Lecture Transcript</a>
     </span>,
     date: 'Jul 31, 2024',
     image: "https://res.cloudinary.com/dfdk4g2pj/image/upload/v1725459446/sara_28738_close_up_of_white_detailed_statue_of_upper_body_of_a_2e9de4bf-8be2-4053-9de1-4f9f6e1b0a87_1_nwjdg0.png"
-  },
-  {
-    title: <span>
-      Note: Why am I founding a new academic course on AI & Society?
-    </span>,
-    type: 'post',
-    desc: <span>
-      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
-    </span>,
-    date: 'Sep 01, 2024'
   },
   {
     title: <span>
@@ -37,7 +37,8 @@ const posts = [
     desc: <span>
       This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
     </span>,
-    date: 'Sep 01, 2024'
+    date: 'Sep 01, 2024',
+    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726091626/kate_42327_Christian_woman_praying_1310_mystic_medieval_--v_6.1_2e3c52e9-55b6-40e5-bf00-c6e8efd95118_tzskug.png'
   },
 ]
 
