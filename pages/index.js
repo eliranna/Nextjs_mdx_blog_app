@@ -32,7 +32,7 @@ const posts = [
   },
   {
     title: <span>
-      Kierkegaard and Faith
+      How Kierkegaard Has Changed My Mind About Faith
     </span>,
     type: 'article',
     desc: <span>

@@ -8,6 +8,30 @@ import Layout from '../../components/Layout';
 import { fontSize, spacing } from '../../style';
 
 export default function Post(props) {
+
+    const header = (
+        <div className='flex flex-col gap-12'>
+            <div className='flex flex-col gap-6'>
+                {props.frontMatter.title && (
+                    <div className='text-3xl text-center leading-relaxed'>{props.frontMatter.title}</div>
+                )}
+                {props.frontMatter.date && (
+                    <div className='text-center text-xs tracking-widest opacity-60'>
+                        {props.frontMatter.date}
+                    </div>
+                )}
+            </div>
+            {props.frontMatter.description && (
+                <div className='text-lg italic text-justify'>{props.frontMatter.description}</div>
+            )}
+            {
+                <div className='flex justify-center tracking-[18px]'>
+                    ...
+                </div>
+            }
+        </div>        
+    )
+
     return (
         <Layout>
             {
@@ -16,15 +40,8 @@ export default function Post(props) {
                         <Head>
                             <title>{props.frontMatter.title}</title>
                         </Head>
-                        <div className='flex flex-col gap-20 max-w-2xl mt-10'>
-                            {(props.frontMatter.title || props.frontMatter.description) && 
-                            (<div className='flex flex-col gap-12'>
-                                <div className='text-center text-xs tracking-widest opacity-60'>
-                                    {props.frontMatter.date}
-                                </div>
-                                <div className='text-3xl text-center leading-relaxed'>{props.frontMatter.title}</div>
-                                <div className='text-lg italic text-center'>{props.frontMatter.description}</div>
-                            </div>)}
+                        <div className='flex flex-col gap-16 max-w-2xl mt-10'>
+                            {(props.frontMatter.title || props.frontMatter.description) && header}
                             <div className='text-justify'>
                                 <MDXRemote {...props.mdxSource} />
                             </div>

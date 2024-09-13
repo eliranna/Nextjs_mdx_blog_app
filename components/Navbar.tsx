@@ -18,10 +18,10 @@ export default function Navbar() {
     }
 
     return (
-        <div className='flex max-w-5xl w-full '>
+        <div className='flex max-w-5xl w-full justify-center'>
             <div className='flex'>
                 {!inBase && (
-                    <div className='text-sm small-caps tracking-widest flex' style={{textDecoration: 'none!important'}}>
+                    <div className='text-sm small-caps tracking-widest flex justify-center' style={{textDecoration: 'none!important'}}>
                         <Link href={`/`} style={{textDecoration: 'none!important'}}>
                             Eliran Natan
                         </Link>                
