@@ -11,23 +11,24 @@ const withCoverImage = false;
 
 const posts = [
   {
-    title: <span>
-      AI & Society: Founding a New Academic Course at Reichman University
-    </span>,
+    title: 'Life as Contradiction: Upcoming Lecture at TAU',
     type: 'post',
     desc: <span>
-      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai_and_society_course">My Message to Students</a>.
-    </span>,
-    date: 'Sep 01, 2024',
-  },
-  {
-    title: 'Life as Contradiction: My Upcoming Lecture at TAU',
-    type: 'post',
-    desc: <span>
-      On August 7th, I will speak at the annual conference for research students in the Philosophy Department at Tel Aviv University. My lecture will address the Hegelian account of organicism and explore how contemporary approaches in neuroscience can be interpreted as instantiations of dialectical principles. <a href="posts/life_as_contradiction">Lecture Transcript</a>
+      On August 7th, I will speak at the annual conference for research students in the Philosophy Department at Tel Aviv University. My lecture will address the Hegelian account of organism and explore how contemporary approaches in neuroscience can be interpreted as instantiations of dialectical principles. <a href="posts/life_as_contradiction">Read More</a>
     </span>,
     date: 'Jul 31, 2024',
     image: "https://res.cloudinary.com/dfdk4g2pj/image/upload/v1725459446/sara_28738_close_up_of_white_detailed_statue_of_upper_body_of_a_2e9de4bf-8be2-4053-9de1-4f9f6e1b0a87_1_nwjdg0.png"
+  },
+  {
+    title: <span>
+      AI & Society: Founding a New Academic Course for Reichman University
+    </span>,
+    type: 'post',
+    desc: <span>
+      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai_and_society_course">Message to Students</a>.
+    </span>,
+    date: 'Sep 01, 2024',
+    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/t_s/v1726190063/powercrm_60677_The_Creation_of_Adam_in_the_style_of_Michelangel_66f7fa95-3751-4289-9857-84564e7573b2_far02a.png'
   },
   {
     title: <span>
@@ -82,7 +83,7 @@ export default function Home() {
                       </div>
                     </div>
                   )}
-                  <div className='flex flex-col mt-8'>
+                  <div className='flex flex-col my-8'>
                       <div className='text-center small-caps tracking-widest text-md flex justify-center gap-12'>
                           <SectionLink section="Blog"/>
                           <div className='text-xs flex flex-col justify-center'>&#9702;</div>
@@ -109,11 +110,13 @@ export default function Home() {
                               </div>
                             </div>
                             {post.image && (
-                              <div className='max-w-xl'>
+                              <div className='max-w-lg'>
                                 <img src={post.image}/>
                               </div>
                             )}
+
                           </div>
+                          
 
                         ))}
                         {posts.filter(post => state === 'Blog' ? post.type === 'post' : post.type === 'article').length === 0 && (
