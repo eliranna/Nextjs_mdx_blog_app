@@ -29,7 +29,8 @@ const posts = [
       On August 7th, I will speak at the annual conference for research students in the Philosophy Department at Tel Aviv University. My lecture will address the Hegelian account of organism and explore how contemporary approaches in neuroscience can be interpreted as instantiations of dialectical principles. <a href="posts/life_as_contradiction">Read More</a>
     </span>,
     date: 'Jul 31, 2024',
-    image: "https://res.cloudinary.com/dfdk4g2pj/image/upload/v1725459446/sara_28738_close_up_of_white_detailed_statue_of_upper_body_of_a_2e9de4bf-8be2-4053-9de1-4f9f6e1b0a87_1_nwjdg0.png"
+    image: "https://res.cloudinary.com/dfdk4g2pj/image/upload/v1725459446/sara_28738_close_up_of_white_detailed_statue_of_upper_body_of_a_2e9de4bf-8be2-4053-9de1-4f9f6e1b0a87_1_nwjdg0.png",
+    link: 'posts/life_as_contradiction'
   },
   {
     title: <span>

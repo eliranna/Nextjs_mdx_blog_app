@@ -26,11 +26,16 @@ export default function Post(props) {
             {props.frontMatter.description && (
                 <div className='text-lg italic text-justify'>{props.frontMatter.description}</div>
             )}
-            {
+            {props.frontMatter.image && (
+                <div>
+                    <img src={props.frontMatter.image}/>
+                </div>
+            )}
+            {!props.frontMatter.image && (
                 <div className='flex justify-center tracking-[18px]'>
                     ...
                 </div>
-            }
+            )}
         </div>        
     )
 
