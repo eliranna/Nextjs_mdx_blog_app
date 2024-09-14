@@ -9,53 +9,6 @@ import {useState} from 'react'
 
 const withCoverImage = false;
 
-const posts = [
-  {
-    title: <span>
-      AI & Society Course: Message to Students
-    </span>,
-    type: 'post',
-    desc: <span>
-      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i>
-    </span>,
-    date: 'Sep 01, 2024',
-    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/t_s/v1726190063/powercrm_60677_The_Creation_of_Adam_in_the_style_of_Michelangel_66f7fa95-3751-4289-9857-84564e7573b2_far02a.png',
-    link: 'posts/ai_and_society_course'
-  },
-  {
-    title: 'Life as Contradiction: Upcoming Lecture at TAU',
-    type: 'post',
-    desc: <span>
-      On August 7th, I will speak at the annual conference for research students in the Philosophy Department at Tel Aviv University. My lecture will address the Hegelian account of organism and explore how contemporary approaches in neuroscience can be interpreted as instantiations of dialectical principles. <a href="posts/life_as_contradiction">Read More</a>
-    </span>,
-    date: 'Jul 31, 2024',
-    image: "https://res.cloudinary.com/dfdk4g2pj/image/upload/v1725459446/sara_28738_close_up_of_white_detailed_statue_of_upper_body_of_a_2e9de4bf-8be2-4053-9de1-4f9f6e1b0a87_1_nwjdg0.png",
-    link: 'posts/life_as_contradiction'
-  },
-  {
-    title: <span>
-      How Kierkegaard Has Changed My Mind About Faith
-    </span>,
-    type: 'article',
-    desc: <span>
-      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
-    </span>,
-    date: 'Sep 01, 2024',
-    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726091626/kate_42327_Christian_woman_praying_1310_mystic_medieval_--v_6.1_2e3c52e9-55b6-40e5-bf00-c6e8efd95118_tzskug.png'
-  },
-  {
-    title: <span>
-      Life as Contradiction: The Hegelian Organisem
-    </span>,
-    type: 'article',
-    desc: <span>
-      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
-    </span>,
-    date: 'Sep 01, 2024',
-    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726274197/david_leitner_white_marble_sculpture_portrait_of_the_ai_--v_6.1_76bdf34a-b0f3-4573-9596-f00a08c5c3db_dxjgql.png'
-  },
-]
-
 export default function Home({posts}) {
 
   const [state, setState] = useState("Blog")
