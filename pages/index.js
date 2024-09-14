@@ -12,14 +12,15 @@ const withCoverImage = false;
 const posts = [
   {
     title: <span>
-      AI & Society: Founding a New Academic Course for Reichman University
+      AI & Society Course: Message to Students
     </span>,
     type: 'post',
     desc: <span>
-      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai_and_society_course">Message to Students</a>.
+      This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i>
     </span>,
     date: 'Sep 01, 2024',
-    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/t_s/v1726190063/powercrm_60677_The_Creation_of_Adam_in_the_style_of_Michelangel_66f7fa95-3751-4289-9857-84564e7573b2_far02a.png'
+    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/t_s/v1726190063/powercrm_60677_The_Creation_of_Adam_in_the_style_of_Michelangel_66f7fa95-3751-4289-9857-84564e7573b2_far02a.png',
+    link: 'posts/ai_and_society_course'
   },
   {
     title: 'Life as Contradiction: Upcoming Lecture at TAU',
@@ -112,10 +113,15 @@ export default function Home() {
                                   {post.date}
                                 </div>
                                 <div className='text-center text-md font-semibold'>
-                                  {post.title}
+                                  {post.link ? (
+                                    <Link href={post.link} style={{textDecoration:'none'}}>
+                                      {post.title}
+                                    </Link> ) :
+                                      post.title
+                                    }
                                 </div>
                               </div>
-                              <div className='text-center text-sm md:text-md'>
+                              <div className='text-center text-md md:text-md'>
                                 {post.desc}
                               </div>
                             </div>

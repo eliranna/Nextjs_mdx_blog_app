@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className='flex max-w-5xl w-full justify-center'>
             <div className='flex'>
                 {!inBase && (
-                    <div className='text-sm small-caps tracking-widest flex justify-center' style={{textDecoration: 'none!important'}}>
+                    <div className='text-sm small-caps tracking-widest flex justify-center'>
                         <Link href={`/`} style={{textDecoration: 'none!important'}}>
                             Eliran Natan
                         </Link>                

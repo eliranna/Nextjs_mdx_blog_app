@@ -7,10 +7,12 @@ import { MDXRemote } from 'next-mdx-remote';
 import Layout from '../../components/Layout';
 import { fontSize, spacing } from '../../style';
 
+const components = { p: (props) => <p className='text-md text-justify' >{props.children}</p> }
+
 export default function Post(props) {
 
     const header = (
-        <div className='flex flex-col gap-12'>
+        <div className='flex flex-col gap-12 px-8'>
             <div className='flex flex-col gap-6'>
                 {props.frontMatter.title && (
                     <div className='text-3xl text-center leading-relaxed'>{props.frontMatter.title}</div>
@@ -42,8 +44,8 @@ export default function Post(props) {
                         </Head>
                         <div className='flex flex-col gap-16 max-w-2xl mt-10'>
                             {(props.frontMatter.title || props.frontMatter.description) && header}
-                            <div className='text-justify'>
-                                <MDXRemote {...props.mdxSource} />
+                            <div className=' px-8'>
+                                <MDXRemote {...props.mdxSource} components={components} />
                             </div>
                         </div>
                     </div>
