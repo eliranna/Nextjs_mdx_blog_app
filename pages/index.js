@@ -56,7 +56,7 @@ const posts = [
   },
 ]
 
-export default function Home() {
+export default function Home({posts}) {
 
   const [state, setState] = useState("Blog")
 
@@ -106,7 +106,7 @@ export default function Home() {
                   <div className='flex flex-col'>
                     <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
                       <div className='flex flex-col justify-center items-center gap-20'>
-                        {posts.filter(post => state === 'Blog' ? post.type === 'post' : post.type === 'article').map(post => (
+                        {posts.filter(post => state === 'Blog' ? post.frontMatter.type === 'post' : post.frontMatter.type === 'article').map(post => (
                           <div className='flex flex-col gap-10 justify-center items-center'>
                             <div className='flex flex-col gap-4 max-w-lg '>
                               <div className='flex flex-col gap-2'>
@@ -114,21 +114,18 @@ export default function Home() {
                                   {post.date}
                                 </div>
                                 <div className='text-center text-md font-semibold'>
-                                  {post.link ? (
-                                    <Link href={post.link} style={{textDecoration:'none'}}>
-                                      {post.title}
-                                    </Link> ) :
-                                      post.title
-                                    }
+                                  <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
+                                      {post.frontMatter.title}
+                                    </Link>
                                 </div>
                               </div>
                               <div className='text-center text-md md:text-md'>
-                                {post.desc}
+                                {post.frontMatter.description}
                               </div>
                             </div>
-                            {post.image && (
+                            {post.frontMatter.image && (
                               <div className='max-w-lg'>
-                                <img src={post.image}/>
+                                <img src={post.frontMatter.image}/>
                               </div>
                             )}
 
@@ -136,7 +133,7 @@ export default function Home() {
                           
 
                         ))}
-                        {posts.filter(post => state === 'Blog' ? post.type === 'post' : post.type === 'article').length === 0 && (
+                        {posts.filter(post => state === 'Blog' ? post.frontMatter.type === 'post' : post.frontMatter.type === 'article').length === 0 && (
                           <div>
                             Nothing to show yet.
                           </div>
@@ -145,11 +142,6 @@ export default function Home() {
                     </div>
                   </div>
               </div>
-          </div>
-          <div>
-            {false && <div className='flex justify-center text-xs'>
-            © {new Date().getFullYear()} Eliran Natan. All rights reserved. Art is AI-generated.
-            </div>}
           </div>
       </div>
     </div>

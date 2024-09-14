@@ -62,7 +62,9 @@ export default function Layout({children}) {
         </div>
       </div>
       <div style={footer}>
-
+            {true && <div className='flex justify-center text-xs'>
+            © {new Date().getFullYear()} Eliran Natan. All rights reserved. Art is AI-generated.
+            </div>}
       </div>
     </div>
   )
