@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import React from 'react';
-import DarkModeToggle from './DarkModeToggle'
 
 export default function Navbar() {
 
