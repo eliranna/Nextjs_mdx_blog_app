@@ -69,7 +69,7 @@ export default function Home() {
       <Head>
           <title>Eliran Natan</title>
       </Head>
-      <div className='flex flex-col justify-center gap-12 my-28'>
+      <div className='flex flex-col justify-center gap-12 my-28 px-8'>
           <div className='flex justify-center'>
               <div className='flex justify-center flex-col gap-16'>
                   <div className='flex flex-col justify-between gap-2'>
@@ -106,7 +106,6 @@ export default function Home() {
                       <div className='flex flex-col justify-center items-center gap-20'>
                         {posts.filter(post => state === 'Blog' ? post.type === 'post' : post.type === 'article').map(post => (
                           <div className='flex flex-col gap-10 justify-center items-center'>
-
                             <div className='flex flex-col gap-4 max-w-lg '>
                               <div className='flex flex-col gap-2'>
                                 <div className='text-center text-xs tracking-widest opacity-60'>
@@ -116,7 +115,7 @@ export default function Home() {
                                   {post.title}
                                 </div>
                               </div>
-                              <div className='text-center text-md'>
+                              <div className='text-center text-sm md:text-md'>
                                 {post.desc}
                               </div>
                             </div>
