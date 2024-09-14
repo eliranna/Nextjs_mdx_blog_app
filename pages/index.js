@@ -125,7 +125,9 @@ export default function Home({posts}) {
                             </div>
                             {post.frontMatter.image && (
                               <div className='max-w-lg'>
-                                <img src={post.frontMatter.image}/>
+                                <Link href={`posts/${post.slug}`}>
+                                  <img src={post.frontMatter.image}/>
+                                </Link>
                               </div>
                             )}
 
