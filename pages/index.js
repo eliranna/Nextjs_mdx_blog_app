@@ -73,7 +73,7 @@ export default function Home({posts}) {
       </Head>
       <div className='flex flex-col justify-center gap-12 my-28 px-8'>
           <div className='flex justify-center'>
-              <div className='flex justify-center flex-col gap-16'>
+              <div className='flex justify-center flex-col gap-28'>
                   <div className='flex flex-col justify-between gap-2'>
                       <div className='small-caps tracking-widest text-xl text-center'>
                           <span>Eliran Natan</span>
@@ -96,22 +96,24 @@ export default function Home({posts}) {
                       </div>
                     </div>
                   )}
-                  <div className='flex flex-col my-8'>
+                  {false && (
+                    <div className='flex flex-col my-8'>
                       <div className='text-center small-caps tracking-widest text-md flex justify-center gap-12'>
                           <SectionLink section="Blog"/>
                           <div className='text-xs flex flex-col justify-center'>&#9702;</div>
                           <SectionLink section="Writings"/>
                       </div>
-                  </div>
+                    </div>
+                  )}
                   <div className='flex flex-col'>
                     <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
                       <div className='flex flex-col justify-center items-center gap-20'>
-                        {posts.filter(post => state === 'Blog' ? post.frontMatter.type === 'post' : post.frontMatter.type === 'article').map(post => (
+                        {posts.map(post => (
                           <div className='flex flex-col gap-10 justify-center items-center'>
                             <div className='flex flex-col gap-4 max-w-lg '>
                               <div className='flex flex-col gap-2'>
                                 <div className='text-center text-xs tracking-widest opacity-60'>
-                                  {post.date}
+                                  {post.frontMatter.date}
                                 </div>
                                 <div className='text-center text-md font-semibold'>
                                   <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
