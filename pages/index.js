@@ -50,7 +50,7 @@ const posts = [
       This year I will join the faculty of Reichman University as a lecturer to establish new academic course. The course challenges learners to fundamentally address the question: <i>Can artificial intelligence promote a human future that is equitable and sustainable? </i> <a href="posts/ai-in-socio-ecological-sphere-course">Read the note</a>.
     </span>,
     date: 'Sep 01, 2024',
-    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726091626/kate_42327_Christian_woman_praying_1310_mystic_medieval_--v_6.1_2e3c52e9-55b6-40e5-bf00-c6e8efd95118_tzskug.png'
+    image: 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726274197/david_leitner_white_marble_sculpture_portrait_of_the_ai_--v_6.1_76bdf34a-b0f3-4573-9596-f00a08c5c3db_dxjgql.png'
   },
 ]
 
