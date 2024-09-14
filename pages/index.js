@@ -59,7 +59,7 @@ export default function Home() {
   const [state, setState] = useState("Blog")
 
   const SectionLink = ({section}) => (
-    <div onClick={() => setState(section)} className='cursor-pointer border-b border-white hover:border-black transition-all' style={{
+    <div onClick={() => setState(section)} className='cursor-pointer border-b border-white lg:hover:border-black transition-all' style={{
       borderBottom: (state === section) && '1px solid black' 
     }}>{section}</div>
   )
