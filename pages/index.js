@@ -33,7 +33,7 @@ export default function Home({posts}) {
                       </div>
                       <div className='text-right italic flex justify-center'>
                           <span className='max-w-sm text-center'> 
-                            Philosophy Research Student at Tel Aviv University, Lecturer at Tel Aviv University and Reichman University.
+                              Philosophy Research Student at Tel Aviv University, Lecturer at Tel Aviv University and Reichman University.
                           </span>
                       </div>
                   </div>
@@ -79,7 +79,7 @@ export default function Home({posts}) {
                               </div>
                             </div>
                             {post.frontMatter.image && (
-                              <div className='max-w-lg'>
+                              <div className='max-w-md'>
                                 <Link href={`posts/${post.slug}`}>
                                   <img src={post.frontMatter.image}/>
                                 </Link>
