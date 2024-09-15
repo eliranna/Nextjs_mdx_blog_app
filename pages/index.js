@@ -33,7 +33,7 @@ export default function Home({posts}) {
                       </div>
                       <div className='text-right italic flex justify-center'>
                           <span className='max-w-sm text-center'> 
-                            Philosophy Research Student and Lecturer at Tel Aviv University and Reichman University.
+                            Philosophy Research Student at Tel Aviv University, Lecturer at Tel Aviv University and Reichman University.
                           </span>
                       </div>
                   </div>
