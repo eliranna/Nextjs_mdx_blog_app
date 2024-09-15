@@ -8,6 +8,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import {useState} from 'react'
 
+const imagesAbove = false;
+
 export default function Home({posts}) {
 
   const [state, setState] = useState("Blog")
@@ -47,18 +49,18 @@ export default function Home({posts}) {
                   )}
                   <div className='flex flex-col'>
                     <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
-                      <div className='flex flex-col justify-center items-center gap-20'>
+                      <div className='flex flex-col justify-center items-center gap-24'>
                         {posts.map((post, index) => (
-                          <div key={`story-${index}`} className='flex flex-col gap-10 justify-center items-center'>
+                          <div key={`story-${index}`} className={`flex ${imagesAbove ? 'flex-col-reverse': 'flex-col'} gap-10 justify-center items-center`}>
                             <div className='flex flex-col gap-4 max-w-lg '>
                               <div className='flex flex-col gap-2'>
                                 <div className='text-center text-xs tracking-widest opacity-60'>
                                   {post.frontMatter.date}
                                 </div>
-                                <div className='text-center text-md font-semibold'>
+                                <div className='text-center text-lg font-semibold italic'>
                                   <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
                                       {post.frontMatter.title}
-                                    </Link>
+                                  </Link>
                                 </div>
                               </div>
                               <div className='text-center text-md md:text-md'>
@@ -72,7 +74,6 @@ export default function Home({posts}) {
                                 </Link>
                               </div>
                             )}
-
                           </div>
                           
 
