@@ -9,6 +9,8 @@ import Link from 'next/link';
 import {useState} from 'react'
 
 const imagesAbove = false;
+const showImagesOfPosts = false;
+const coverPhoto = null;
 
 export default function Home({posts}) {
 
@@ -38,6 +40,11 @@ export default function Home({posts}) {
                           </span>
                       </div>
                   </div>
+                  { coverPhoto && (
+                    <div className='max-w-4xl'>
+                      <img alt="" src={coverPhoto}/>
+                    </div>
+                  )}
                   {false && (
                     <div className='flex flex-col my-8'>
                       <div className='text-center small-caps tracking-widest text-md flex justify-center gap-12'>
@@ -49,7 +56,7 @@ export default function Home({posts}) {
                   )}
                   <div className='flex flex-col'>
                     <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
-                      <div className='flex flex-col justify-center items-center gap-24'>
+                      <div className={`flex flex-col justify-center items-center ${showImagesOfPosts ? 'gap-24': 'gap-12'}`}>
                         {posts.map((post, index) => (
                           <div key={`story-${index}`} className={`flex ${imagesAbove ? 'flex-col-reverse': 'flex-col'} gap-10 justify-center items-center`}>
                             <div className='flex flex-col gap-4 max-w-lg '>
@@ -57,7 +64,7 @@ export default function Home({posts}) {
                                 <div className='text-center text-xs tracking-widest opacity-60'>
                                   {post.frontMatter.date}
                                 </div>
-                                <div className='text-center text-lg font-semibold italic'>
+                                <div className='text-center text-xl font-semibold italic'>
                                   <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
                                       {post.frontMatter.title}
                                   </Link>
@@ -67,8 +74,8 @@ export default function Home({posts}) {
                                 {post.frontMatter.description}
                               </div>
                             </div>
-                            {post.frontMatter.image && (
-                              <div className='max-w-md'>
+                            {post.frontMatter.image && showImagesOfPosts &&  (
+                              <div className='max-w-sm'>
                                 <Link href={`posts/${post.slug}`}>
                                   <img alt={""} src={post.frontMatter.image}/>
                                 </Link>
