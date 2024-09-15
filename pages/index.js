@@ -79,7 +79,7 @@ export default function Home({posts}) {
                               </div>
                             </div>
                             {post.frontMatter.image && (
-                              <div className='max-w-lg'>
+                              <div className='max-w-md'>
                                 <Link href={`posts/${post.slug}`}>
                                   <img src={post.frontMatter.image}/>
                                 </Link>
