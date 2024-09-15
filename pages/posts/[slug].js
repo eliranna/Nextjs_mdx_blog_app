@@ -81,7 +81,7 @@ export async function getStaticProps({params:{slug}}){
     const fileData = fs.readFileSync(path.join("posts",slug+'.mdx'),'utf-8');
     const {data,content} = matter(fileData);
     const mdxSource = await serialize(content, {
-        mdxOptions: { development: false },
+        mdxOptions: { development: true },
       });
     return {
         props:{
