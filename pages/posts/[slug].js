@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -28,7 +29,7 @@ export default function Post(props) {
             )}
             {props.frontMatter.image && (
                 <div>
-                    <img src={props.frontMatter.image}/>
+                    <img alt="" src={props.frontMatter.image}/>
                 </div>
             )}
             {!props.frontMatter.image && (
