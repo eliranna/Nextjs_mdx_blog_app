@@ -30,12 +30,12 @@ export default function Home({posts}) {
       <div className='flex flex-col justify-center gap-12 my-28 px-8'>
           <div className='flex justify-center'>
               <div className='flex justify-center flex-col gap-28'>
-                  <div className='flex flex-col justify-between gap-2'>
-                      <div className='small-caps tracking-widest text-xl text-center'>
+                  <div className='flex flex-col justify-between gap-4'>
+                      <div className='small-caps tracking-widest text-2xl text-center'>
                           <span>Eliran Natan</span>
                       </div>
                       <div className='text-right italic flex justify-center'>
-                          <span className='max-w-sm text-center'> 
+                          <span className='max-w-sm text-center text-lg'> 
                               Philosophy Research Student at Tel Aviv University, Lecturer at Tel Aviv University and Reichman University.
                           </span>
                       </div>
