@@ -10,7 +10,7 @@ import { fontSize, spacing } from '../../style';
 
 const components = { 
     p: (props) => <p className='text-lg text-justify indent-6 mb-0'>{props.children}</p>,
-    h3: (props) => <div className='flex justify-center text-center mb-3 '><h2 className='text-xl text-justify font-bold'>{props.children}</h2></div>
+    h3: (props) => <div className='flex justify-center text-center mb-4 italic'><h2 className='text-xl text-justify font-semibold'>{props.children}</h2></div>
 }
 
 export default function Post(props) {

@@ -15,3 +15,10 @@ body {
 .small-caps {
   font-variant: small-caps;
 }
+
+@font-face {
+  font-family: 'Ariana';
+  src: url('/assets/Ariana.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

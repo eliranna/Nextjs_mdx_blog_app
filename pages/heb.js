@@ -10,7 +10,7 @@ import {useState} from 'react'
 
 const imagesAbove = false;
 const showImagesOfPosts = false;
-const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726530258/IMG_2256_z7ohgl.jpg';
+const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726501311/elirannatan_painting_Piero_di_Cosimo_philosophical_night_sky_--_825bbc6a-4769-4f35-ac35-678f1db6052f_udplu8.png';
 
 export default function Home({posts}) {
 
@@ -23,7 +23,7 @@ export default function Home({posts}) {
   )
 
   return (
-    <div>
+    <div dir="rtl" style={{fontFamily: 'Ariana', textAlign:'right'}}>
       <Head>
           <title>Eliran Natan</title>
       </Head>
@@ -32,11 +32,11 @@ export default function Home({posts}) {
               <div className='flex justify-center flex-col gap-28'>
                   <div className='flex flex-col justify-between gap-2'>
                       <div className='small-caps tracking-widest text-xl text-center'>
-                          <span>Eliran Natan</span>
+                          <span>אלירן נתן</span>
                       </div>
-                      <div className='text-right italic flex justify-center'>
+                      <div className='text-right flex justify-center'>
                           <span className='max-w-sm text-center'> 
-                              Philosophy Research Student at Tel Aviv University, Lecturer at Tel Aviv University and Reichman University.
+                              תלמיד מחקר ומורה לפילוסופיה באונ׳ תל-אביב. מרצה לפילוסופיה באוניברסיטת רייכמן. 
                           </span>
                       </div>
                   </div>
@@ -57,7 +57,7 @@ export default function Home({posts}) {
                   <div className='flex flex-col'>
                     <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
                       <div className={`flex flex-col justify-center items-center ${showImagesOfPosts ? 'gap-24': 'gap-12'}`}>
-                        {posts.filter(post => post.frontMatter.public).map((post, index) => (
+                        {posts.map((post, index) => (
                           <div key={`story-${index}`} className={`flex ${imagesAbove ? 'flex-col-reverse': 'flex-col'} gap-10 justify-center items-center`}>
                             <div className='flex flex-col gap-4 max-w-lg '>
                               <div className='flex flex-col gap-2'>
@@ -65,21 +65,13 @@ export default function Home({posts}) {
                                   {post.frontMatter.date}
                                 </div>
                                 <div className='text-center text-xl font-semibold italic'>
-                                  {post.frontMatter.link ? (
                                   <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
                                       {post.frontMatter.title}
-                                  </Link>) :
-                                    (
-                                      <diV>
-                                        {post.frontMatter.title}
-                                      </diV>
-                                    )
-                                  }
+                                  </Link>
                                 </div>
                               </div>
                               <div className='text-center text-md md:text-md'>
-                                {post.frontMatter.description} {post.frontMatter.link && <Link href={`posts/${post.slug}`} 
-                                style={{textDecoration: 'underline'}}>Read more</Link>}
+                                {post.frontMatter.description}
                               </div>
                             </div>
                             {post.frontMatter.image && showImagesOfPosts &&  (
