@@ -56,7 +56,7 @@ export default function Home({posts}) {
                   )}
                   <div className='flex flex-col'>
                     <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
-                      <div className={`flex flex-col justify-center items-center ${showImagesOfPosts ? 'gap-24': 'gap-12'}`}>
+                      <div className={`flex flex-col justify-center items-center ${showImagesOfPosts ? 'gap-24': 'gap-16'}`}>
                         {posts.filter(post => post.frontMatter.public).map((post, index) => (
                           <div key={`story-${index}`} className={`flex ${imagesAbove ? 'flex-col-reverse': 'flex-col'} gap-10 justify-center items-center`}>
                             <div className='flex flex-col gap-4 max-w-lg '>
