@@ -10,7 +10,7 @@ import {useState} from 'react'
 
 const imagesAbove = false;
 const showImagesOfPosts = false;
-const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726931220/ninicar_Greek_statue_--v_6.1_a56cdab3-1940-492b-a445-5ed85348dc39_lhjopy.png';
+const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726876855/Screenshot_2024-09-21_at_3.00.41_dbv0nz.png';
 
 export default function Home({posts}) {
 
@@ -49,14 +49,12 @@ export default function Home({posts}) {
                         <div>
                           <span className='italic'>
                             {'"'}
-                            Nothing in the world—indeed nothing even beyond the world—can possibly be conceived which could be called {"'"}good{"'"} [...] except a 
+                            Nothing in the world—indeed nothing even beyond the world—can possibly be conceived which could be called good without qualification except a 
                             {" "}
-                            <span className='small-caps font-bold'>good will</span>
-                            {" "}
-                            <span>[...] like a jewel, it would still shine by itself, as something that has full worth in itself.</span>
+                            <span className='small-caps font-bold'>good will</span>.
                             {'"'} {" "} 
                             <span className='small-caps'>
-                            — Immanuel Kant, Groundwork for the Metaphysic of Morals (1785).
+                            — Immanuel Kant, Groundwork for the Metaphysic of Morals (1785)
                             </span>
                           </span>
                         </div>
