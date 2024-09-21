@@ -9,7 +9,7 @@ import Link from 'next/link';
 import {useState} from 'react'
 
 const imagesAbove = false;
-const showImagesOfPosts = false;
+const showImagesOfPosts = true;
 const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726931220/ninicar_Greek_statue_--v_6.1_a56cdab3-1940-492b-a445-5ed85348dc39_lhjopy.png';
 
 export default function Home({posts}) {
@@ -102,10 +102,18 @@ export default function Home({posts}) {
                               </div>
                             </div>
                             {post.frontMatter.image && showImagesOfPosts &&  (
-                              <div className='max-w-sm'>
-                                <Link href={`posts/${post.slug}`}>
-                                  <img alt={""} src={post.frontMatter.image}/>
-                                </Link>
+                              <div className='max-w-lg'>
+                                 {post.frontMatter.link ? (
+                                      <Link href={`posts/${post.slug}`}>
+                                          <img alt={""} src={post.frontMatter.image}/>
+                                        </Link>) :
+                                    (
+                                      <div>
+                                        <img alt={""} src={post.frontMatter.image}/>
+                                      </div>
+                                    )
+                                  }
+
                               </div>
                             )}
                           </div>
