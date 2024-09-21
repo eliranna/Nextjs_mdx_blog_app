@@ -49,7 +49,7 @@ export default function Home({posts}) {
                         <div>
                           <span className='italic'>
                             {'"'}
-                            Nothing in the world—indeed nothing even beyond the world—can possibly be conceived which could be called {"'"}good {"'"} without qualification except a 
+                            Nothing in the world—indeed nothing even beyond the world—can possibly be conceived which could be called {"'"}good{"'"} [...] except a 
                             {" "}
                             <span className='small-caps font-bold'>good will</span>
                             {" "}
