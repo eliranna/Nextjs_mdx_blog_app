@@ -10,7 +10,7 @@ import {useState} from 'react'
 
 const imagesAbove = false;
 const showImagesOfPosts = false;
-const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726530258/IMG_2256_z7ohgl.jpg';
+const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726931220/ninicar_Greek_statue_--v_6.1_a56cdab3-1940-492b-a445-5ed85348dc39_lhjopy.png';
 
 export default function Home({posts}) {
 
@@ -31,18 +31,37 @@ export default function Home({posts}) {
           <div className='flex justify-center'>
               <div className='flex justify-center flex-col gap-28'>
                   <div className='flex flex-col justify-between gap-4'>
-                      <div className='small-caps tracking-widest text-2xl text-center'>
+                      <div className='small-caps tracking-widest text-xl text-center'>
                           <span>Eliran Natan</span>
                       </div>
                       <div className='text-right italic flex justify-center'>
-                          <span className='max-w-sm text-center text-lg'> 
+                          <span className='max-w-sm text-center text-md'> 
                               Philosophy Research Student at Tel Aviv University, Lecturer at Tel Aviv University and Reichman University.
                           </span>
                       </div>
                   </div>
                   { coverPhoto && (
-                    <div className='max-w-5xl'>
-                      <img alt="" src={coverPhoto}/>
+                    <div className='max-w-2xl flex flex-col gap-6 text-center justify-center items-center'>
+                      <div>
+                        <img alt="" src={coverPhoto}/>
+                      </div>
+                      <div className='max-w-lg'>
+                        <div>
+                          <span className='italic'>
+                            {'"'}
+                            Nothing in the world—indeed nothing even beyond the world—can possibly be conceived which could be called {"'"}good {"'"} without qualification except a 
+                            {" "}
+                            <span className='small-caps font-bold'>good will</span>
+                            {" "}
+                            <span>[...] like a jewel, it would still shine by itself, as something that has full worth in itself.</span>
+                            {'"'} {" "} 
+                            <span className='small-caps'>
+                            — Immanuel Kant, Groundwork for the Metaphysic of Morals (1785).
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                      
                     </div>
                   )}
                   {false && (
@@ -64,15 +83,15 @@ export default function Home({posts}) {
                                 <div className='text-center text-xs tracking-widest opacity-60'>
                                   {post.frontMatter.date}
                                 </div>
-                                <div className='text-center text-xl font-semibold italic'>
+                                <div className='text-center text-xl italic'>
                                   {post.frontMatter.link ? (
                                   <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
                                       {post.frontMatter.title}
                                   </Link>) :
                                     (
-                                      <diV>
+                                      <div>
                                         {post.frontMatter.title}
-                                      </diV>
+                                      </div>
                                     )
                                   }
                                 </div>
