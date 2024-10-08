@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import React from 'react';
 
-export default function Navbar() {
+export default function Navbar({heb}) {
 
     const [inBase, setInBase] = useState(false)
     
@@ -12,17 +12,13 @@ export default function Navbar() {
         }
     })
 
-    const onDarkModeToggle =()=> {
-
-    }
-
     return (
         <div className='flex max-w-5xl w-full justify-center'>
             <div className='flex'>
                 {!inBase && (
                     <div className='text-sm small-caps tracking-widest flex justify-center'>
                         <Link href={`/`} style={{textDecoration: 'none!important'}}>
-                            Eliran Natan
+                            {heb ? 'אלירן נתן' : 'Eliran Natan'}
                         </Link>                
                     </div>
                 )}                 

@@ -10,7 +10,8 @@ import {useState} from 'react'
 
 const imagesAbove = false;
 const showImagesOfPosts = false;
-const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726876855/Screenshot_2024-09-21_at_3.00.41_dbv0nz.png';
+const coverPhoto = null;
+const lock = true;
 
 export default function Home({posts}) {
 
@@ -22,7 +23,7 @@ export default function Home({posts}) {
     }}>{section}</div>
   )
 
-  return (
+  return lock ? <div></div> : (
     <div>
       <Head>
           <title>Eliran Natan</title>
@@ -81,7 +82,7 @@ export default function Home({posts}) {
                                 <div className='text-center text-xs tracking-widest opacity-60'>
                                   {post.frontMatter.date}
                                 </div>
-                                <div className='text-center text-xl italic'>
+                                <div className='text-center text-xl font-semibold'>
                                   {post.frontMatter.link ? (
                                   <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
                                       {post.frontMatter.title}

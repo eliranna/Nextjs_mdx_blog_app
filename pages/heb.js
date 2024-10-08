@@ -10,7 +10,8 @@ import {useState} from 'react'
 
 const imagesAbove = false;
 const showImagesOfPosts = false;
-const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726501311/elirannatan_painting_Piero_di_Cosimo_philosophical_night_sky_--_825bbc6a-4769-4f35-ac35-678f1db6052f_udplu8.png';
+const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1726876855/Screenshot_2024-09-21_at_3.00.41_dbv0nz.png';
+
 
 export default function Home({posts}) {
 

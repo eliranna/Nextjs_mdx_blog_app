@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar'
 import { spacing } from '../style';
 
-export default function Layout({children}) {
+export default function Layout({heb, children}) {
 
   const [isDarkMode, setIsDarkMode] = useState(null);
 
@@ -18,7 +18,8 @@ export default function Layout({children}) {
   }
 
   const wrapper = {
-      minHeight: "100vh"
+      minHeight: "100vh",
+      fontFamily: heb ? 'Ariana' : 'Crimson Text'
   }
 
   const handleDarkModeToggle = () => {
@@ -52,19 +53,19 @@ export default function Layout({children}) {
   }
 
   return (
-    <div style={isDarkMode ? {...wrapper, ...darkMode} : {...wrapper, ...lightMode}}>
+    <div style={wrapper} dir={heb? 'rtl' : 'ltr'}>
       <div style={main}>
           <div className='w-full flex justify-center pt-12'>
-            <Navbar isDarkMode={isDarkMode} onDarkModeToggle={handleDarkModeToggle}/>
+            <Navbar heb={heb}/>
           </div>
         <div>
           {children}
         </div>
       </div>
       <div style={footer}>
-            {true && <div className='flex justify-center text-xs'>
-            © {new Date().getFullYear()} Eliran Natan. All rights reserved. Art is AI-generated.
-            </div>}
+             <div className='flex justify-center text-xs'>
+            © {heb ? 'אלירן נתן. כל הזכויות שמורות.' : 'Eliran Natan. All rights reserved. Art is AI-generated.'}
+            </div>
       </div>
     </div>
   )

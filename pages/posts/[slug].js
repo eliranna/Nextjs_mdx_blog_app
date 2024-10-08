@@ -24,11 +24,11 @@ export default function Post(props) {
                     </div>
                 )}
                 {props.frontMatter.title && (
-                    <div className='text-3xl text-center leading-relaxed italic'>{props.frontMatter.title}</div>
+                    <div className='text-3xl text-center leading-relaxed'>{props.frontMatter.heb ? props.frontMatter.titleHeb : props.frontMatter.title}</div>
                 )}
             </div>
             {props.frontMatter.description && (
-                <div className='text-lg italic text-justify'>{props.frontMatter.description}</div>
+                <div className='text-lg text-justify'>{props.frontMatter.heb ? props.frontMatter.descriptionHeb : props.frontMatter.description}</div>
             )}
             {props.frontMatter.image && (
                 <div>
@@ -44,7 +44,7 @@ export default function Post(props) {
     )
 
     return (
-        <Layout>
+        <Layout heb={props.frontMatter.heb}>
             {
                 props.frontMatter && props.mdxSource && (
                     <div className='flex justify-center'>
