@@ -35,7 +35,7 @@ export default function Home({posts}) {
                       <div className='small-caps tracking-[3px] text-2xl text-center font-semibold'>
                           <span>אלירן נתן</span>
                       </div>
-                      <div className='text-right flex justify-center text-lg tracking-[1.8px] font-medium'>
+                      <div className='text-right flex justify-center text-md tracking-[1.8px] font-medium'>
                           <span className='max-w-sm text-center'> 
                               תלמיד מחקר ומורה לפילוסופיה באונ׳ תל-אביב. מרצה לפילוסופיה באוניברסיטת רייכמן. 
                           </span>
