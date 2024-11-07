@@ -10,8 +10,8 @@ import {useState} from 'react'
 
 const imagesAbove = false;
 const showImagesOfPosts = false;
-const coverPhoto = null;
-const lock = true;
+const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1730981425/image_1_wpxwpa.png'
+
 
 export default function Home({posts}) {
 
@@ -23,44 +23,33 @@ export default function Home({posts}) {
     }}>{section}</div>
   )
 
-  return lock ? <div></div> : (
-    <div>
+  return (
+    <div dir="rtl" style={{fontFamily: "Frank Ruhl Libre", textAlign:'right', fontWeight:'400'}}>
       <Head>
           <title>Eliran Natan</title>
       </Head>
-      <div className='flex flex-col justify-center gap-12 my-28 px-8'>
-          <div className='flex justify-center'>
-              <div className='flex justify-center flex-col gap-28'>
-                  <div className='flex flex-col justify-between gap-4'>
-                      <div className='small-caps tracking-widest text-xl text-center'>
-                          <span>Eliran Natan</span>
+      <div className='flex flex-col justify-center gap-12 my-28 px-8 justify-items-center	content-center items-center'>
+          <div className='flex justify-center max-w-3xl justify-self-center'>
+              <div className='flex justify-center flex-col gap-20'>
+                  <div className='flex flex-col justify-between gap-2'>
+                      <div className='small-caps tracking-[3px] text-2xl text-center font-semibold'>
+                          <span>אלירן נתן</span>
                       </div>
-                      <div className='text-right italic flex justify-center'>
-                          <span className='max-w-sm text-center text-md'> 
-                              Philosophy Research Student at Tel Aviv University, Lecturer at Tel Aviv University and Reichman University.
+                      <div className='text-right flex justify-center text-lg tracking-[1.8px] font-medium'>
+                          <span className='max-w-sm text-center'> 
+                              תלמיד מחקר ומורה לפילוסופיה באונ׳ תל-אביב. מרצה לפילוסופיה באוניברסיטת רייכמן. 
                           </span>
                       </div>
                   </div>
-                  { coverPhoto && (
-                    <div className='max-w-2xl flex flex-col gap-6 text-center justify-center items-center'>
+                  {coverPhoto && (
+                    <div className='flex flex-col gap-3'>
                       <div>
                         <img alt="" src={coverPhoto}/>
                       </div>
-                      <div className='max-w-lg'>
-                        <div>
-                          <span className='italic'>
-                            {'"'}
-                            Nothing in the world—indeed nothing even beyond the world—can possibly be conceived which could be called good without qualification except a 
-                            {" "}
-                            <span className='small-caps font-bold'>good will</span>.
-                            {'"'} {" "} 
-                            <span className='small-caps'>
-                            — Immanuel Kant, Groundwork for the Metaphysic of Morals (1785)
-                            </span>
-                          </span>
-                        </div>
+                      <div>
+                        <span className='font-semibold'>תמונה:</span> {" "}
+                        <span>מבוא לתולדות הפילוסופיה של הגל</span>
                       </div>
-                      
                     </div>
                   )}
                   {false && (
@@ -73,46 +62,46 @@ export default function Home({posts}) {
                     </div>
                   )}
                   <div className='flex flex-col'>
-                    <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
-                      <div className={`flex flex-col justify-center items-center ${showImagesOfPosts ? 'gap-24': 'gap-16'}`}>
-                        {posts.filter(post => post.frontMatter.public).map((post, index) => (
+                    {posts.filter(post => post.frontMatter.public).map((post, index) => (
+                      <div key={`story-${index} w-full`} className='flex flex-col gap-10 mb-10'>
+                        <div className='border-t border-black'/>
+                        <div className='text-2xl font-semibold'>
+                        <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
+                            {post.frontMatter.titleHeb}
+                        </Link>
+                        </div>
+                        <div className='text-xl font-medium text-justify'>
+                          {post.frontMatter.descriptionHeb}
+                        </div>
+                      </div>
+                    ))}
+
+
+
+{false && (         <div className='flex flex-col gap-6 justify-center items-center transition-opacity'>
+                      <div className={`flex flex-col justify-center items-center ${showImagesOfPosts ? 'gap-24': 'gap-12'}`}>
+                        {posts.map((post, index) => (
                           <div key={`story-${index}`} className={`flex ${imagesAbove ? 'flex-col-reverse': 'flex-col'} gap-10 justify-center items-center`}>
                             <div className='flex flex-col gap-4 max-w-lg '>
                               <div className='flex flex-col gap-2'>
                                 <div className='text-center text-xs tracking-widest opacity-60'>
                                   {post.frontMatter.date}
                                 </div>
-                                <div className='text-center text-xl font-semibold'>
-                                  {post.frontMatter.link ? (
+                                <div className='text-center text-xl font-semibold italic'>
                                   <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
                                       {post.frontMatter.title}
-                                  </Link>) :
-                                    (
-                                      <div>
-                                        {post.frontMatter.title}
-                                      </div>
-                                    )
-                                  }
+                                  </Link>
                                 </div>
                               </div>
                               <div className='text-center text-md md:text-md'>
-                                {post.frontMatter.description} {post.frontMatter.link && <Link href={`posts/${post.slug}`} 
-                                style={{textDecoration: 'underline'}}>Read more</Link>}
+                                {post.frontMatter.description}
                               </div>
                             </div>
                             {post.frontMatter.image && showImagesOfPosts &&  (
-                              <div className='max-w-lg'>
-                                 {post.frontMatter.link ? (
-                                      <Link href={`posts/${post.slug}`}>
-                                          <img alt={""} src={post.frontMatter.image}/>
-                                        </Link>) :
-                                    (
-                                      <div>
-                                        <img alt={""} src={post.frontMatter.image}/>
-                                      </div>
-                                    )
-                                  }
-
+                              <div className='max-w-sm'>
+                                <Link href={`posts/${post.slug}`}>
+                                  <img alt={""} src={post.frontMatter.image}/>
+                                </Link>
                               </div>
                             )}
                           </div>
@@ -125,7 +114,7 @@ export default function Home({posts}) {
                           </div>
                         )}                        
                       </div>
-                    </div>
+                    </div>)}
                   </div>
               </div>
           </div>
