@@ -8,6 +8,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import {useState} from 'react'
 
+const PUBLIC = false;
+
 const imagesAbove = false;
 const showImagesOfPosts = false;
 const coverPhoto = 'https://res.cloudinary.com/dfdk4g2pj/image/upload/v1730981425/image_1_wpxwpa.png'
@@ -23,7 +25,7 @@ export default function Home({posts}) {
     }}>{section}</div>
   )
 
-  return (
+  return PUBLIC && (
     <div dir="rtl" style={{fontFamily: "Frank Ruhl Libre", textAlign:'right', fontWeight:'400'}}>
       <Head>
           <title>Eliran Natan</title>
@@ -37,7 +39,7 @@ export default function Home({posts}) {
                       </div>
                       <div className='text-right flex justify-center text-md tracking-[1.8px] font-medium'>
                           <span className='max-w-sm text-center'> 
-                              תלמיד מחקר ומורה לפילוסופיה באונ׳ תל-אביב. מרצה לפילוסופיה באוניברסיטת רייכמן. 
+                              תלמיד מחקר לפילוסופיה ומורה בחוג למדעי הרוח של אונ׳ תל-אביב. מרצה לפילוסופיה באוניברסיטת רייכמן. 
                           </span>
                       </div>
                   </div>
@@ -63,7 +65,7 @@ export default function Home({posts}) {
                   )}
                   <div className='flex flex-col'>
                     {posts.filter(post => post.frontMatter.public).map((post, index) => (
-                      <div key={`story-${index} w-full`} className='flex flex-col gap-10 mb-10'>
+                      <div key={`story-${index} w-full`} className='flex flex-col gap-6 mb-6'>
                         <div className='border-t border-black'/>
                         <div className='text-2xl font-semibold'>
                         <Link href={`posts/${post.slug}`} style={{textDecoration:'none'}}>
